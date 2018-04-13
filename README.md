@@ -27,7 +27,11 @@ mvn test
 As this is a really simple project, you can use the command-line build tool and a light-weight IDE like the [Atom](https://atom.io/) editor. Just be sure to enable collapsing directories (_File / Settings / Packages / tree-view / Collapse directories_).
 
 ## Overview
+
 CHANGING BOIIIII-BRANCH-A CHANGES
+
+CHANGING BOIIIII-BRANCH-B CHANGEZZ
+
 The project represents an alpha version of a spaceship.
 
 - The ship (`SpaceShip` interface) can fire one or more lasers or torpedos.
