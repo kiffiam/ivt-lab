@@ -1,5 +1,7 @@
 package hu.bme.mit.spaceship;
 
+import static hu.bme.mit.spaceship.FiringMode.*;
+
 /**
 * A simple spaceship with two proton torpedo stores and four lasers
 */
@@ -38,8 +40,7 @@ public class GT4500 implements SpaceShip {
 
     boolean firingSuccess = false;
 
-    switch (firingMode) {
-      case SINGLE:
+    if (firingMode == SINGLE) {
         if (wasPrimaryFiredLast) {
           // try to fire the secondary first
           if (! secondaryTorpedoStore.isEmpty()) {
@@ -74,27 +75,26 @@ public class GT4500 implements SpaceShip {
             // if both of the stores are empty, nothing can be done, return failure
           }
         }
-        break;
+       }
 
-      case ALL:
+      if(firingMode == ALL){
         // try to fire both of the torpedo stores
-        //TODO implement feature
 boolean first =false;
 boolean second = false;
 	if (! primaryTorpedoStore.isEmpty()) {
-            firingSuccess = primaryTorpedoStore.fire(1);
+
             wasPrimaryFiredLast = true;
 first = true;
 		}
 	if (! secondaryTorpedoStore.isEmpty()) {
-              firingSuccess = secondaryTorpedoStore.fire(1);
+
               wasPrimaryFiredLast = true;
 second = true;
 		}
 	
 	firingSuccess = first && second;
-        break;
-    }
+        }
+    
 
     return firingSuccess;
   }
